@@ -124,3 +124,5 @@ As a logged-in GamerConnect user, I want to modify my profile by altering my pro
 #### Colors
 ![color-palete](https://github.com/JamieB92/Gamer-Connect-Backend-PP4/assets/117354147/4c72a043-a4e3-49ba-b583-5ec8cf4a4c46)
 
+#### Font
+Google Font - Lexend
