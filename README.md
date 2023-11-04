@@ -3,6 +3,8 @@ Welcome to GamerConnect, the ultimate social media platform for gamers!
 
 GamerConnect is a dynamic and inclusive platform designed for gamers of all ages and backgrounds. Whether you're a seasoned pro or just starting your gaming journey, our platform is tailored to bring the gaming community together.
 
+This is the Backend Repo for the project please click [here](https://github.com/JamieB92/Gamer-Connect-Frontend-PP4) for the backend repo.
+
 ## Features
 - Game Clips & Screenshots: Share your gaming triumphs, epic moments, and funniest fails with our intuitive media uploading features.
 
