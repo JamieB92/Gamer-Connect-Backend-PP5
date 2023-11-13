@@ -126,3 +126,28 @@ As a logged-in GamerConnect user, I want to modify my profile by altering my pro
 
 #### Font
 Google Font - Lexend
+
+
+ # Deployment
+Here you can find the instructions to recreate the deployment of the project
+
+## Backend Deployment
+
+### Github
+- In the top right of the page click the plus symbol
+- Click New Repository
+- Select Template - Code-Institute-Org/gitpod-full-template
+- Name the repository (Reference Backend)
+- Click Create
+
+### Gitpod (Please use Chrome or Firefox)
+- open a new tab in your browser and go to your browsers extensions store
+- Search for Gitpod
+- Install Gitpod extension
+- Go back to your newly created repo
+- Click the Green Gitpod Open button
+- Click Continue with Github 
+- Gitpod will now create a workspace 
+
+
+
