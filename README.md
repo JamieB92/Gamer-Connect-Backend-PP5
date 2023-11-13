@@ -149,5 +149,29 @@ Here you can find the instructions to recreate the deployment of the project
 - Click Continue with Github 
 - Gitpod will now create a workspace 
 
+### Django DRF Install
+- In your IDE open a new terminal
+- Enter enter in the terminal pip3 install 'django<4'
+- Enter in the terminal django-admin startproject gamer_connect_api .
+
+### Cloudinary and Pillow
+- Install Cloudinary in the terminal with - pip install django-cloudinary-storage
+- Install Pillow in the terminal with - pip install Pillow
+- Now go to settings.py in your project 
+- In installed apps Add 'cloudinary_storage' above 'django.contrib.staticfiles' and 'cloudinary' below.
+- create an env.py file in the top directory
+- add your cloudinary API Environment variable to the env.py file
+- add the following to settings.py underneath "from pathlib import Path":
+        
+        import os
+
+        if os.path.exists('env.py'):
+            import env
+
+        CLOUDINARY_STORAGE = {
+            'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+        }
+        MEDIA_URL = '/media/'
+        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
