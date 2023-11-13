@@ -155,10 +155,14 @@ Here you can find the instructions to recreate the deployment of the project
 - Enter in the terminal django-admin startproject gamer_connect_api .
 
 ### Cloudinary and Pillow
+- Go to Cloudinary - https://cloudinary.com/
+- Create an account
+- Click dashboard
+- Copy your cloudinary API Environment variable
 - Install Cloudinary in the terminal with - pip install django-cloudinary-storage
 - Install Pillow in the terminal with - pip install Pillow
 - Now go to settings.py in your project 
-- In installed apps Add 'cloudinary_storage' above 'django.contrib.staticfiles' and 'cloudinary' below.
+- In installed apps add 'cloudinary_storage' above 'django.contrib.staticfiles' and 'cloudinary' below.
 - create an env.py file in the top directory
 - add your cloudinary API Environment variable to the env.py file
 - add the following to settings.py underneath "from pathlib import Path":
