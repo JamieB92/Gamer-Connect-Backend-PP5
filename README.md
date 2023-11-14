@@ -36,27 +36,7 @@ This is the Backend Repo for the project please click [here](https://github.com/
 
 # User Stories
 
-## Navigation & Authentication
-
-### Smooth Navigation: 
-As a GamerConnect user, I aim to have a consistent menu accessible from any page, ensuring an effortless journey across the site.
-
-### Efficient Page Transitions: 
-As a GamerConnect user, I wish to move between pages seamlessly, eliminating the need for page refresh and enhancing the viewing experience.
-
-### New Account Creation:
-As a GamerConnect user, I intend to establish a fresh account to access all the privileges available to registered gamers.
-
-### User Authentication: 
-As a GamerConnect user, I seek the ability to log in to enjoy features exclusive to logged-in gamers.
-
-### Conditional Interface: 
-As a logged-out GamerConnect user, I want to see options for either signing in or registering to smoothly join the gaming community.
-
-### Avatar Recognition: 
-As a GamerConnect user, I desire the ability to identify fellow gamers through user avatars.
-
-## Post Sharing & Interaction:
+## Epic 1 - Post Sharing & Interaction:
 
 ### Create Gaming Posts: 
 As a GamerConnect user, I aim to share my gaming experiences by crafting posts containing clips and images, facilitating connections with the gaming community.
@@ -67,10 +47,7 @@ As a GamerConnect user, I intend to examine the specifics of individual posts to
 ### Show Appreciation: 
 As a GamerConnect user, I want to express my support for posts that pique my interest by showing my appreciation.
 
-## Content Discovery & Engagement:
-
-### Stay Updated with Recent Posts: 
-As a GamerConnect user, I desire the ability to view the latest gaming posts, arranged by most recent, to remain informed about current gaming content.
+## Epic 2 - Content Discovery & Engagement:
 
 ### Keyword-Based Search: 
 As a GamerConnect user, I plan to look for posts and user profiles using keywords to locate content and gamers aligned with my interests.
@@ -81,7 +58,7 @@ As a logged-in GamerConnect user, I aspire to easily access posts I've favored, 
 ### Followed Users Content: 
 As a logged-in GamerConnect user, I hope to peruse gaming content from users I follow to stay updated with their gaming journeys.
 
-## Post-Specific Interactions:
+## Epic 3 - Post-Specific Interactions:
 
 ### Explore Post Discussions: 
 As a GamerConnect user, I want to navigate to post-specific pages to engage in discussions and explore comments about noteworthy gaming moments.
@@ -92,16 +69,16 @@ As a post owner on GamerConnect, I aim to have control over the editing of my po
 ### Active Commenting: 
 As a GamerConnect user, I intend to contribute to post discussions by adding comments, allowing me to share thoughts and engage with fellow gamers.
 
-### In-Depth Comment Exploration: 
-As a GamerConnect user, I plan to explore comments on posts to gain insights into the perspectives and thoughts of other gamers.
-
 ### Comment Control: 
 As the owner of a comment, I wish to have the capability to delete my comments, allowing me to manage the content within the application.
 
 ### Comment Amendment: 
 As the author of a comment, I hope to edit my comments to correct or update my contributions within the discussion.
 
-## User Profiles & Connections:
+## Epic 4 - User Profiles & Connections:
+
+### New Account Creation:
+As a GamerConnect user, I intend to establish a fresh account to access all the privileges available to registered gamers.
 
 ### User Profile Viewing:
 As a GamerConnect user, I aim to investigate other gamers' profiles to access their gaming posts and discover more about their gaming experiences.
@@ -118,6 +95,22 @@ As a GamerConnect user, I plan to investigate all the posts created by a specifi
 ### Profile Customization: 
 As a logged-in GamerConnect user, I want to modify my profile by altering my profile picture and updating my bio to create a personalized gaming identity.
 
+## Epic 5 - Developer 
+
+### Initial Backend Setup
+As a developer, I must establish the backend project structure to facilitate the development of project.
+
+### Initial Frontend Setup
+As a developer, I must establish the frontend project structure to facilitate the development of project.
+
+### Deploy Backend
+As a developer, I need to ensure the successful deployment of the backend of the project to make the site accessible. 
+
+### Deploy Frontend
+As a developer, I need to ensure the successful deployment of the frontend of the project to make the site accessible.
+
+### Database Setup
+As a developer, it is essential for me to create a database and establish its integration with the project, enabling the storage of information.
 
 ## Design
 
