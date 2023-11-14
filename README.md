@@ -41,27 +41,24 @@ This is the Backend Repo for the project please click [here](https://github.com/
 ### Create Gaming Posts: 
 As a GamerConnect user, I aim to share my gaming experiences by crafting posts containing clips and images, facilitating connections with the gaming community.
 
-### View Post Details: 
-As a GamerConnect user, I intend to examine the specifics of individual posts to gain deeper insights into noteworthy gaming moments.
+### View All Posts:
+As a GamerConnect user, I wish to scroll through all the latests posts on the site
 
-### Show Appreciation: 
-As a GamerConnect user, I want to express my support for posts that pique my interest by showing my appreciation.
+### View Post Details: 
+As a GamerConnect user, I want to check out individual posts to learn more about interesting gaming posts.
 
 ## Epic 2 - Content Discovery & Engagement:
 
+### Show Appreciation: 
+As a GamerConnect user, I want to show my liking for interesting posts to express support.
+
 ### Keyword-Based Search: 
-As a GamerConnect user, I plan to look for posts and user profiles using keywords to locate content and gamers aligned with my interests.
+As a GamerConnect user, I aim to search for posts and user profiles using keywords to find content and gamers matching my interests.
 
 ### Review Liked Posts: 
-As a logged-in GamerConnect user, I aspire to easily access posts I've favored, making it simple to revisit cherished gaming moments.
-
-### Followed Users Content: 
-As a logged-in GamerConnect user, I hope to peruse gaming content from users I follow to stay updated with their gaming journeys.
+As a GamerConnect user, I want a straightforward way to revisit posts I've liked, making it easy to relive favorite gaming moments
 
 ## Epic 3 - Post-Specific Interactions:
-
-### Explore Post Discussions: 
-As a GamerConnect user, I want to navigate to post-specific pages to engage in discussions and explore comments about noteworthy gaming moments.
 
 ### Post Editing Privileges: 
 As a post owner on GamerConnect, I aim to have control over the editing of my post title and description to ensure accuracy and updates.
@@ -70,10 +67,7 @@ As a post owner on GamerConnect, I aim to have control over the editing of my po
 As a GamerConnect user, I intend to contribute to post discussions by adding comments, allowing me to share thoughts and engage with fellow gamers.
 
 ### Comment Control: 
-As the owner of a comment, I wish to have the capability to delete my comments, allowing me to manage the content within the application.
-
-### Comment Amendment: 
-As the author of a comment, I hope to edit my comments to correct or update my contributions within the discussion.
+As the owner of a comment, I wish to have the capability to delete and edit my comments, allowing me to manage the content within the application.
 
 ## Epic 4 - User Profiles & Connections:
 
@@ -81,36 +75,30 @@ As the author of a comment, I hope to edit my comments to correct or update my c
 As a GamerConnect user, I intend to establish a fresh account to access all the privileges available to registered gamers.
 
 ### User Profile Viewing:
-As a GamerConnect user, I aim to investigate other gamers' profiles to access their gaming posts and discover more about their gaming experiences.
-
-### Discover Influential Gamers: 
-As a GamerConnect user, I seek to identify a list of prominent profiles with substantial followings to explore popular gamers within the community.
+As a GamerConnect user, I want to check out fellow gamers' profiles to explore their gaming posts and learn more about their gaming experiences.
 
 ### User Following & Unfollowing: 
-As a logged-in GamerConnect user, I wish to have the ability to follow and unfollow other gamers, influencing the gaming content displayed in my feed.
-
-### User-Centric Post Exploration: 
-As a GamerConnect user, I plan to investigate all the posts created by a specific gamer, enabling me to stay updated on their gaming experiences or decide to follow them.
+As a GamerConnect user, I want to be able to follow and unfollow other gamers.
 
 ### Profile Customization: 
-As a logged-in GamerConnect user, I want to modify my profile by altering my profile picture and updating my bio to create a personalized gaming identity.
+As a GamerConnect user, when logged in, I want to personalize my gaming identity by changing my profile picture and updating my bio.
 
 ## Epic 5 - Developer 
 
 ### Initial Backend Setup
-As a developer, I must establish the backend project structure to facilitate the development of project.
+As a developer, I need to set up the backend project structure for seamless project development.
 
 ### Initial Frontend Setup
-As a developer, I must establish the frontend project structure to facilitate the development of project.
+As a developer, I must configure the frontend project structure to facilitate project development.
 
 ### Deploy Backend
-As a developer, I need to ensure the successful deployment of the backend of the project to make the site accessible. 
+As a developer, I need to guarantee the successful deployment of the project's backend for site accessibility.
 
 ### Deploy Frontend
-As a developer, I need to ensure the successful deployment of the frontend of the project to make the site accessible.
+As a developer, I must ensure the successful deployment of the project's frontend for users to interact with.
 
 ### Database Setup
-As a developer, it is essential for me to create a database and establish its integration with the project, enabling the storage of information.
+As a developer, it's crucial to create a database and integrate it into the project for effective information storage.
 
 ## Design
 
