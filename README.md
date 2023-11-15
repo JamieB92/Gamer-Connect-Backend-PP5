@@ -130,12 +130,14 @@ Here you can find the instructions to recreate the deployment of the project
 - Click Continue with Github 
 - Gitpod will now create a workspace 
 
-### Django Setup
+### Django and Django Rest Framework Setup
 - In your IDE open a new terminal
-- Enter enter in the terminal pip3 install 'django<4'
+- Enter in the terminal pip3 install 'django<4'
 - Enter in the terminal django-admin startproject {{project_name}} .
 - Enter in the terminal to create an App with - python manage.py startapp {{app_name}}
 - Add the new app to the allowed apps in the settings.py file.
+- Enter in the terminal - pip install djangorestframework.
+- Now got to settings.py and add 'rest_framework' to installed apps.
 
 
 ### Cloudinary and Pillow
