@@ -5,16 +5,16 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user_profile = models.OneToOneField(User, on_delete=models.CASCADE)
-    uploaded_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
-    content = models.TextField(blank=True)
-    image = models.ImageField(
+    bio = models.TextField(blank=True)
+    profile_avatar = models.ImageField(
         upload_to='images/', default='../defaultUserImage_tuses3'
     )
 
     class Meta:
-        ordering = ['-uploaded_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return f"{self.user_profile}'s profile"
