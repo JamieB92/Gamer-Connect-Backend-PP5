@@ -36,11 +36,11 @@ class Profile(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return f"{self.user_profile}'s profile"
+        return f"{self.owner}'s profile"
 
 
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        Profile.objects.create(user_profile=instance)
+        Profile.objects.create(owner=instance)
 
 post_save.connect(create_profile, sender=User)
