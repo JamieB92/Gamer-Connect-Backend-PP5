@@ -5,6 +5,11 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
 
+    """
+    Profile Model that alows the user to select prefered platform they play on with the platforms usename.
+    Default profile avatar set
+    """
+
     xbox = 'Xbox'
     playstation = 'Playstation'
     steam = 'Steam'
