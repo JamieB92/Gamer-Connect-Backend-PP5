@@ -9,6 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
     profile_avatar = serializers.ReadOnlyField(source='owner.profile.profile_avatar.url')
 
 
+
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
@@ -18,5 +19,5 @@ class PostSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_avatar', 'uploaded_on', 'last_edited',
-            'post_header', 'caption', 'upload_image', 'upload_clip'
+            'post_header', 'caption', 'upload_clip',
         ]

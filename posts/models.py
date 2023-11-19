@@ -15,11 +15,8 @@ class Post(models.Model):
     last_edited = models.DateTimeField(auto_now=True)
     post_header = models.CharField(max_length=255)
     caption = models.TextField(blank=True)
-    upload_image = models.ImageField(
-        upload_to='image/', default='../default_post_ns8zax', blank=True
-    )
     upload_clip = models.FileField(
-        upload_to='media/'
+        upload_to='media/', default='../default_post_ns8zax', blank=True
     )
 
 
