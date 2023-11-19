@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
+from cloudinary_storage.storage import VideoMediaCloudinaryStorage
+from cloudinary_storage.validators import validate_video
 
 
 
@@ -16,8 +17,9 @@ class Post(models.Model):
     post_header = models.CharField(max_length=255)
     caption = models.TextField(blank=True)
     upload_clip = models.FileField(
-        upload_to='media/', default='../default_post_ns8zax', blank=True
-    )
+        upload_to='videos/', blank=True, storage=VideoMediaCloudinaryStorage(),
+                              validators=[validate_video])
+    upload_image = models.ImageField(upload_to='images/', blank=True)
 
 
     class Meta:
