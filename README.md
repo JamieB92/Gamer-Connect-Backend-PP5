@@ -166,3 +166,8 @@ Here you can find the instructions to recreate the deployment of the project
         DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
+# Bugs and Testing 
+
+You can find all the bugs and testing in the following files:
+
+GamerConnect [Backend](https://github.com/JamieB92/Gamer-Connect-Backend-PP5/blob/main/bugs_and_testing_backend.md)
