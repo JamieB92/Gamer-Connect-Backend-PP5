@@ -1,11 +1,11 @@
 from rest_framework import generics, permissions
 from gamer_connect_api.permissions import IsOwnerOrReadOnly
 from .models import Comment
-from .serializers import PostCommentSerializer
+from .serializers import PostCommentSerializer, PostCommentDetailSerializer
 
 class PostCommentList(generics.ListCreateAPIView):
     """
-    List posts_comments or create a comment if logged in.
+    List all comments or create a comment if the user is logged in.
     """
     serializer_class = PostCommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -13,3 +13,12 @@ class PostCommentList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+class PostCommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a comment by id if the user owns the comment
+    """
+    permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PostCommentDetailSerializer
+    queryset = Comment.objects.all()
