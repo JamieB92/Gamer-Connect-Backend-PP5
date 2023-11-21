@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from posts.models import Post
+from likes.models import Like
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -7,12 +8,21 @@ class PostSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_avatar = serializers.ReadOnlyField(source='owner.profile.profile_avatar.url')
-
+    like_id = serializers.SerializerMethodField()
 
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
+
+    def get_like_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = Like.objects.filter(
+                owner=user, post=obj
+            ).first()
+            return like.id if like else None
+        return None
 
     class Meta:
         model = Post
@@ -20,4 +30,5 @@ class PostSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_avatar', 'uploaded_on', 'last_edited',
             'post_header', 'caption', 'upload_clip', 'upload_image',
+            'like_id',
         ]
