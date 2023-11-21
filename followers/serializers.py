@@ -8,12 +8,12 @@ class FollowerSerializer(serializers.ModelSerializer):
     Serializer for the Follower model
     """
     owner = serializers.ReadOnlyField(source='owner.username')
-    followed_by = serializers.ReadOnlyField(source='followed.username')
+    is_following = serializers.ReadOnlyField(source='followed.username')
 
     class Meta:
         model = Follower
         fields = [
-            'id', 'owner', 'started_following', 'followed', 'followed_by'
+            'id', 'owner', 'started_following', 'followed', 'is_following'
         ]
 
     def create(self, validated_data):
