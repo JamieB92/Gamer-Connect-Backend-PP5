@@ -12,7 +12,7 @@ class Post(models.Model):
     """
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    uploaded_on = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     last_edited = models.DateTimeField(auto_now=True)
     post_header = models.CharField(max_length=255)
     caption = models.TextField(blank=True)
@@ -23,7 +23,7 @@ class Post(models.Model):
 
 
     class Meta:
-        ordering = ['-uploaded_on']
+        ordering = ['-created_at']
 
     def __str__(self):
         return f'{self.id} {self.post_header}'

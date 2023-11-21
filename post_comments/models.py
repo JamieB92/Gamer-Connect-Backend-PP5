@@ -9,11 +9,11 @@ class Comment(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    commented_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()
 
     class Meta:
-        ordering = ['-commented_at']
+        ordering = ['-created_at']
     def __str__(self):
         return self.comment
