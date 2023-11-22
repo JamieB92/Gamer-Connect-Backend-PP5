@@ -140,6 +140,7 @@ Here you can find the instructions to recreate the deployment of the project
 - Now go to settings.py and add 'rest_framework' to installed apps.
 - Enter in the terminal pip install django_filter
 - Now go to settings.py and 'django_filers' to installed apps.
+- pip freeze > requirements.txt
 
 
 
