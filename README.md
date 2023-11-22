@@ -112,7 +112,7 @@ Google Font - Lexend
  # Deployment
 Here you can find the instructions to recreate the deployment of the project
 
-## Backend Deployment
+## Backend Setup & Deployment
 
 ### Github
 - In the top right of the page click the plus symbol
@@ -136,8 +136,11 @@ Here you can find the instructions to recreate the deployment of the project
 - Enter in the terminal django-admin startproject {{project_name}} .
 - Enter in the terminal to create an App with - python manage.py startapp {{app_name}}
 - Add the new app to the allowed apps in the settings.py file.
-- Enter in the terminal - pip install djangorestframework.
-- Now got to settings.py and add 'rest_framework' to installed apps.
+- Enter in the terminal - pip install djangorestframework
+- Now go to settings.py and add 'rest_framework' to installed apps.
+- Enter in the terminal pip install django_filter
+- Now go to settings.py and 'django_filers' to installed apps.
+
 
 
 ### Cloudinary and Pillow
