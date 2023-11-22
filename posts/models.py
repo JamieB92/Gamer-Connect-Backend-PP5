@@ -13,7 +13,7 @@ class Post(models.Model):
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    last_edited = models.DateTimeField(auto_now=True)
+    edited_on = models.DateTimeField(auto_now=True)
     post_header = models.CharField(max_length=255)
     caption = models.TextField(blank=True)
     upload_clip = models.FileField(
