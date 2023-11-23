@@ -308,8 +308,83 @@ Here you can find the instructions to recreate the deployment of the project
 - Confirm this has been added by going back to Elephantsql
 - click on your instance 
 - select browser in the left navigation
-- Click the table queries and select aut_user
+- Click the table queries and select auth_user
 - When you click execute you should now see your new superuser
+
+### IDE Setup For Deployment: 
+
+- In the terminal of your IDE run - pip3 install gunicorn django-cors-headers
+- Run in the terminal - pip freeze --local > requirements.txt
+- Create a Profile in the top level of the project (Needed for Heroku)
+- Add the following to the Procfile: 
+
+        release: python manage.py makemigrations && python manage.py migrate
+        web: gunicorn drf_api.wsgi
+
+- Go to settings.py and take your Heroku app's URL and add to ALLOWED_HOSTS
+
+        ALLOWED_HOSTS = ['localhost', '{{your_app_name}}.herokuapp.com']
+- Add corsheaders to INSTALLED_APPS underneath dj_rest_auth.registration
+
+        INSTALLED_APPS = [
+
+            'dj_rest_auth.registration',
+            'corsheaders',
+        ]
+
+- Add corsheaders middleware to the TOP of the MIDDLEWARE
+
+            SITE_ID = 1
+            MIDDLEWARE = [
+                'corsheaders.middleware.CorsMiddleware',
+                ...
+            ]
+- Under the MIDDLEWARE list, set the ALLOWED_ORIGINS for the network requests made to the server with the following code:
+
+            if 'CLIENT_ORIGIN' in os.environ:
+                CORS_ALLOWED_ORIGINS = [
+                    os.environ.get('CLIENT_ORIGIN')
+                ]
+            else:
+                CORS_ALLOWED_ORIGIN_REGEXES = [
+                    r"^https://.*\.gitpod\.io$",
+
+- Enable sending cookies in cross-origin requests to allow users to use authentication.
+
+            else:
+                CORS_ALLOWED_ORIGIN_REGEXES = [
+                    r"^https://.*\.gitpod\.io$",
+                ]
+
+            CORS_ALLOW_CREDENTIALS = True
+
+
+- Set the JWT_AUTH_SAMESITE attribute to 'None' to allow the front end and the API to talk between different platforms
+            
+            JWT_AUTH_COOKIE = 'my-app-auth'
+            JWT_AUTH_REFRESH_COOKE = 'my-refresh-token'
+            JWT_AUTH_SAMESITE = 'None'
+
+- Remove the default SECRET_KEY and replace with the following to use env.py
+
+            SECRET_KEY = os.getenv('SECRET_KEY')
+    
+- Create a NEW value for your SECRET_KEY environment variable and add it to env.py file:
+
+            os.environ.setdefault("SECRET_KEY", "YourNewKey")
+
+
+- Set DEBUG to be True only if the DEV environment variable exists.
+
+            DEBUG = 'DEV' in os.environ
+
+- Comment DEV back in env.py
+
+- Run - pip freeze --local > requirements.txt
+- Add, Commit & Push to Github
+
+
+
 
 
 # Bugs and Testing 
