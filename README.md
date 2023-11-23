@@ -109,10 +109,10 @@ As a developer, it's crucial to create a database and integrate it into the proj
 Google Font - Lexend
 
 
- # Deployment
-Here you can find the instructions to recreate the deployment of the project
+ # Deployment And Setup 
+Here you can find the instructions to recreate the project from scrath with setup and deployment instructions
 
-## Backend Setup & Deployment
+## Backend API Setup
 
 ### Github
 - In the top right of the page click the plus symbol
@@ -169,7 +169,6 @@ Here you can find the instructions to recreate the deployment of the project
         MEDIA_URL = '/media/'
         DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-## Deployment setup
 
 ### dj_rest_auth
 - run the following in the terminal - pip3 install dj-rest-auth==2.1.9
