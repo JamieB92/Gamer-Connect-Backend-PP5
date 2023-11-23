@@ -1,3 +1,4 @@
+from django.contrib.humanize.templatetags.humanize import naturaltime
 from rest_framework import serializers
 from .models import Comment
 
@@ -11,10 +12,19 @@ class PostCommentSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_avatar = serializers.ReadOnlyField(source='owner.profile.profile_avatar.url')
+    created_at = serializers.SerializerMethodField()
+    edited_on = serializers.SerializerMethodField()
+
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
+
+    def get_created_at(self, obj):
+        return naturaltime(obj.created_at)
+
+    def get_edited_on(self, obj):
+        return naturaltime(obj.edited_on)
 
     class Meta:
         model = Comment
