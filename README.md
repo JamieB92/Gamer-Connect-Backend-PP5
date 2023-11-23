@@ -230,6 +230,88 @@ Here you can find the instructions to recreate the deployment of the project
 - Create serializers.py and create dj_rest_auth
 - python manage.py migrate
 - run pip freeze > requirements.txt 
+
+## Deployment 
+
+
+
+
+
+### ElephantSQL(Database):
+- Navigate to https://www.elephantsql.com/
+- Click Login/Creat a account.
+- Click "Create New Instance".
+- Create a name for the instance.
+- Select Tiny Turtle.
+- Leave Tags empty and click "Select Region".
+- Select your region.
+- Click Review in the bottom right corner.
+- Click Create instance.
+- Click on your newly created instance.
+- Copy the URL of the instance.
+- Go to Heroku 
+- Click on settings and reveal config vars
+- set the key as DATABASE_URL and paste in the url in the value :
+
+       [DATABASE_URL]   [postgres://xxxxxxxxxxxxxxxxxxxxx]
+
+- Now go back to your IDE 
+- Run pip3 install dj_database_url==0.5.0 psycopg2 in the terminal
+- go to settings.py and import dj_database_url underneath the import for os
+
+        import os
+        import dj_database_url
+- Still in settings.py update the DATABASES section with the following: 
+
+        if 'DEV' in os.environ:
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': BASE_DIR / 'db.sqlite3',
+                }
+            }
+        else:
+            DATABASES = {
+                default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+            }
+
+- add you db url to env.py :
+
+        os.environ['DATABASE_URL'] = "<your PostgreSQL URL here>"
+
+- Temporarly comment out DEV so that the external db can connect to your IDE
+- Go back to settings.py and add a print satement at the bottom of the database if else statement:
+
+        
+        if 'DEV' in os.environ:
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': BASE_DIR / 'db.sqlite3',
+                }
+            }
+        else:
+            DATABASES = {
+                default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+            }
+            print("connected")
+
+- -–dry-run your makemigrations with following in the terminal:
+
+    python3 manage.py makemigrations --dry-run
+
+- if succesful connection is made you should see connected in the terminal
+- Remove print statement
+- Run python3 manage.py migrate
+- Create yourself a super user for the database by running - python3 manage.py createsuperuser
+- Follow the steps to create your superuser username and password
+- Confirm this has been added by going back to Elephantsql
+- click on your instance 
+- select browser in the left navigation
+- Click the table queries and select aut_user
+- When you click execute you should now see your new superuser
+
+
 # Bugs and Testing 
 
 You can find all the bugs and testing in the following files:
