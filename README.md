@@ -169,6 +169,60 @@ Here you can find the instructions to recreate the deployment of the project
         MEDIA_URL = '/media/'
         DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+## Deployment setup
+
+### dj_rest_auth
+- run the following in the termincal - pip3 install dj-rest-auth==2.1.9
+- Add the following in INSTALLED_APPS in settings.py:
+
+        'rest_framework.authtoken',
+        'dj_rest_auth',
+
+- Add the following in the main app (gamer_connect_api) urls.py: 
+
+        path('dj-rest-auth/', include('dj_rest_auth.urls')),
+
+- Now migrate the db with  python manage.py migrate
+- run the following in the terminal - pip freeze > requirements.txt
+
+### All Auth
+- run the following in the terminal -  pip install 'dj-rest-auth-[with_social]'
+- got to INSTALLED_APPS and add the following:
+
+        'django.contrib.sites',
+        'allauth',
+        'allauth.account',
+        'allauth.socialaccount',
+        'dj_rest_auth.registration',
+
+- Underneath INSTALLED_APPS add:
+
+        SITE_ID = 1
+
+- Add the following in the main app (gamer_connect_api) urls.py:     
+
+        path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+
+### JWT Tokens
+- Run the following in the terminal - pip install djangorestframework-simplejwt
+
+- Add the following in settings.py under BASE_DIR :
+
+        REST_FRAMEWORK = {
+            'DEFAULT_AUTHENTICATION_CLASSES': [(
+                'rest_framework.authentication.SessionAuthentication'
+                if 'DEV' in os.environ
+                else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
+            )]
+        }
+
+- Again in setting.py add the following under REST_FRAMEWORK : 
+
+        REST_USE_JWT = True
+        JWT_AUTH_SECURE = True
+        JWT_AUTH_COOKIE = 'my-app-auth'
+        JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+
 
 # Bugs and Testing 
 
