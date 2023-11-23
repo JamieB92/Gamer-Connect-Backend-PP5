@@ -172,7 +172,7 @@ Here you can find the instructions to recreate the deployment of the project
 ## Deployment setup
 
 ### dj_rest_auth
-- run the following in the termincal - pip3 install dj-rest-auth==2.1.9
+- run the following in the terminal - pip3 install dj-rest-auth==2.1.9
 - Add the following in INSTALLED_APPS in settings.py:
 
         'rest_framework.authtoken',
@@ -202,10 +202,11 @@ Here you can find the instructions to recreate the deployment of the project
 - Add the following in the main app (gamer_connect_api) urls.py:     
 
         path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+- run pip freeze > requirements.txt 
 
 ### JWT Tokens
 - Run the following in the terminal - pip install djangorestframework-simplejwt
-
+- add DEV to env.py
 - Add the following in settings.py under BASE_DIR :
 
         REST_FRAMEWORK = {
@@ -222,8 +223,13 @@ Here you can find the instructions to recreate the deployment of the project
         JWT_AUTH_SECURE = True
         JWT_AUTH_COOKIE = 'my-app-auth'
         JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-
-
+        
+        REST_AUTH_SERIALIZERS = {
+            'USER_DETAILS_SERIALIZER': 'gamer_connect_api.serializers.CurrentUserSerializer'
+        }
+- Create serializers.py and create dj_rest_auth
+- python manage.py migrate
+- run pip freeze > requirements.txt 
 # Bugs and Testing 
 
 You can find all the bugs and testing in the following files:
