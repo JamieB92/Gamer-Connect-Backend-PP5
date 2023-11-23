@@ -318,7 +318,7 @@ Here you can find the instructions to recreate the project from scrath with setu
 - Add the following to the Procfile: 
 
         release: python manage.py makemigrations && python manage.py migrate
-        web: gunicorn drf_api.wsgi
+        web: gunicorn gamer_connect_api.wsgi
 
 - Go to settings.py and take your Heroku app's URL and add to ALLOWED_HOSTS
 
