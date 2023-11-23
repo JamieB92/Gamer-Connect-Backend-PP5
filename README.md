@@ -114,6 +114,7 @@ Here you can find the instructions to recreate the project from scrath with setu
 
 ## Backend API Setup
 
+
 ### Github
 - In the top right of the page click the plus symbol
 - Click New Repository
@@ -130,6 +131,15 @@ Here you can find the instructions to recreate the project from scrath with setu
 - Click Continue with Github 
 - Gitpod will now create a workspace 
 
+### Heroku Setup: 
+
+- Navigate to [heroku](https://id.heroku.com/login) and create an account
+- Click the "New" button.
+- Select "Create New App."
+- Provide an app name.
+- Choose a region and click "Create App."
+- Select region and click create app
+
 ### Django and Django Rest Framework Setup
 - In your IDE open a new terminal
 - Enter in the terminal pip3 install 'django<4'
@@ -141,7 +151,6 @@ Here you can find the instructions to recreate the project from scrath with setu
 - Enter in the terminal pip install django_filter
 - Now go to settings.py and 'django_filers' to installed apps.
 - pip freeze > requirements.txt
-
 
 
 ### Cloudinary and Pillow
@@ -231,10 +240,6 @@ Here you can find the instructions to recreate the project from scrath with setu
 - run pip freeze > requirements.txt 
 
 ## Deployment 
-
-
-
-
 
 ### ElephantSQL(Database):
 - Navigate to https://www.elephantsql.com/
@@ -383,7 +388,20 @@ Here you can find the instructions to recreate the project from scrath with setu
 - Add, Commit & Push to Github
 
 
+### Heroku Deployment
 
+- Go to the "Settings" tab and click "Reveal Config Vars."
+- Add the following configuration variables:
+- SECRET_KEY: (Your secret key)
+- DATABASE_URL: (You should already have this if you created an elephantSQL PostGresdb)
+- CLOUNDINARY_URL: (Cloudinary API URL)
+- DISABLE_COLLECTSTATIC: 1
+Click the "Deploy" tab.
+Scroll down to "Connect to GitHub" and sign in/authorize when prompted.
+In the search box, locate the repository you wish to deploy and click "Connect."
+Scroll down to "Manual Deploy" and select the main branch.
+Click "Deploy."
+The app should now be successfully deployed.
 
 
 # Bugs and Testing 
