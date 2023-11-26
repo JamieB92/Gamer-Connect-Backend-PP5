@@ -67,7 +67,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-jamieb92-gamerconnectba-uknrxeyki12.ws-eu106.gitpod.io',
-    os.environ.get('ALLOWED_HOST'),
+    'https://gamer-connect-api-692895d2a2be.herokuapp.com'
 ]
 
 
