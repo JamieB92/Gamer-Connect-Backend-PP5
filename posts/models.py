@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 from cloudinary_storage.storage import VideoMediaCloudinaryStorage
 from cloudinary_storage.validators import validate_video
 
@@ -28,7 +27,3 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.id} {self.post_header}'
-
-    def clean(self):
-        if self.upload_clip and self.upload_image:
-            raise ValidationError('Please only upload a image or video clip')
