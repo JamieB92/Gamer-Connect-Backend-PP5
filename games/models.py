@@ -33,6 +33,10 @@ class Games(models.Model):
     post = models.ForeignKey(
         Post, related_name='games', on_delete=models.CASCADE
     )
+    
+    # Rating Field
+    # Text field for the games 
+    # set choice as expert level 
     game_choice = models.CharField(
         'Preferred Platform', max_length=20, blank=True, choices=games
     )
