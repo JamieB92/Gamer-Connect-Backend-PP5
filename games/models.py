@@ -1,42 +1,54 @@
 from django.db import models
-from posts.models import Post
+from profiles.models import Profile
 from django.contrib.auth.models import User
 
 class Games(models.Model):
     """
-    Games model category that links to the post model
+    Games model category that links to the Profile model
+    Allows user to diplay what games they are currently playing
     """
-    cod = 'Call Of Duty'
-    apex = 'Apex Legends'
-    spiderman = 'SpiderMan'
-    fifa = 'Fifa'
-    zelda = 'Zelda'
-    sbros = 'Smash Bros'
-    pubg = 'PUBG'
-    starfield = 'Starfield'
+
+    yes = 'Yes'
+    no = 'No'
+
+    noob = 'Noob'
+    casual = 'Casual'
+    pro = 'Pro'
+    veteran = 'Vetran'
+    master = 'Master'
+    god = 'God'
 
 
-    games = [
-        (cod, 'Call Of Duty'),
-        (apex, 'Apex Legends'),
-        (spiderman, 'SpiderMan'),
-        (fifa, 'Fifa'),
-        (zelda, 'Zelda'),
-        (sbros, 'Smash Bros'),
-        (pubg, 'PUBG'),
-        (starfield, 'Starfield')
+    looking_for_friends_choice = [
+        (yes, 'Yes'),
+        (no, 'No'),
     ]
+
+    experience_level = [
+        (noob, 'Noob'),
+        (casual, 'Casual'),
+        (pro, 'Pro'),
+        (veteran, 'Vetran'),
+        (master, 'Master'),
+        (god, 'God'),
+    ]
+
+
 
     owner = models.ForeignKey(
         User, related_name='owner', on_delete=models.CASCADE
     )
-    post = models.ForeignKey(
-        Post, related_name='games', on_delete=models.CASCADE
+    profile = models.ForeignKey(
+        Profile, related_name='profile', on_delete=models.CASCADE
     )
-    
-    # Rating Field
-    # Text field for the games 
-    # set choice as expert level 
-    game_choice = models.CharField(
-        'Preferred Platform', max_length=20, blank=True, choices=games
+    game = models.CharField(max_length=255, blank=True)
+    content = models.TextField(blank=True)
+    looking_for_friends = models.CharField(
+        'Looking For Friends', blank=True, max_length=20,
+        choices=looking_for_friends_choice
     )
+    experience = models.CharField(
+        'Experience Level', blank=True, max_length=20,
+        choices=experience_level
+    )
+

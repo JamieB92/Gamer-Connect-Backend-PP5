@@ -5,8 +5,11 @@ class GamesSerializer(serializers.ModelSerializer):
     """
     Serializer for the Games model
     """
-    post_in_game = serializers.ReadOnlyField(source='game_choice.post')
+    is_owner = serializers.SerializerMethodField()
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
 
     class Meta:
         model = Games
-        fields = ['id', 'game_choice', 'post_in_game', 'post']
+        fields = ['id', 'is_owner', 'profile_id', 'game', 'content',
+        'looking_for_friends', 'experience'
+       ]
