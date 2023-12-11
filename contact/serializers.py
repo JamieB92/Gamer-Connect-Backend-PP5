@@ -21,6 +21,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
             "id",
             "owner",
             "subject",
+            "email",
             "content",
             "profile_id",
             "profile_avatar",
