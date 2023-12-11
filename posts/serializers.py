@@ -12,7 +12,6 @@ class PostSerializer(serializers.ModelSerializer):
     like_id = serializers.SerializerMethodField()
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
-    games_id = serializers.SerializerMethodField()
 
 
     def get_is_owner(self, obj):
@@ -28,20 +27,11 @@ class PostSerializer(serializers.ModelSerializer):
             return like.id if like else None
         return None
 
-    def get_games_id(self, obj):
-        user = self.context['request'].user
-        if user.is_authenticated:
-            games = Games.objects.filter(
-                owner=user, post=obj
-            ).first()
-            return games.id if games else None
-        return None
-
     class Meta:
         model = Post
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_avatar', 'created_at', 'edited_on',
             'post_header', 'caption', 'upload_clip', 'upload_image',
-            'like_id', 'likes_count', 'comments_count', 'games_id',
+            'like_id', 'likes_count', 'comments_count'
         ]
