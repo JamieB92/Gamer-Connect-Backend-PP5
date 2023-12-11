@@ -32,7 +32,7 @@ class Profile(models.Model):
     platform = models.CharField(
         'Preferred Platform', max_length=20, blank=True, choices=preferred_platform
     )
-    platform_username = models.CharField('Platfrom Username', max_length=255, blank=True)
+    platform_username = models.CharField('Platform Username', max_length=255, blank=True)
     profile_avatar = models.ImageField(
         upload_to='images/', default='../defaultUserImage_tuses3'
     )
