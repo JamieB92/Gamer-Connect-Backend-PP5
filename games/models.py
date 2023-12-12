@@ -36,11 +36,11 @@ class Games(models.Model):
     owner = models.ForeignKey(
         User, related_name='owner', on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=255, blank=True)
+    name = models.CharField(max_length=255, blank=False)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     friends = models.CharField(
-        'Friends', blank=True, max_length=20,
+        'Friends', blank=False, max_length=20,
         choices=looking_for_friends_choice
     )
     experience = models.CharField(
