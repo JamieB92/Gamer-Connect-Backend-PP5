@@ -14,7 +14,7 @@ class Games(models.Model):
     noob = 'Noob'
     casual = 'Casual'
     pro = 'Pro'
-    veteran = 'Vetran'
+    veteran = 'Veteran'
     master = 'Master'
     god = 'God'
 
