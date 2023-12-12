@@ -43,6 +43,7 @@ class Games(models.Model):
     )
     game = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     looking_for_friends = models.CharField(
         'Looking For Friends', blank=True, max_length=20,
         choices=looking_for_friends_choice
@@ -52,3 +53,8 @@ class Games(models.Model):
         choices=experience_level
     )
 
+
+    class Meta:
+        ordering = ['-created_at']
+    def __str__(self):
+        return self.game
