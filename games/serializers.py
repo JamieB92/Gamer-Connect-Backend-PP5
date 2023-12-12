@@ -18,5 +18,5 @@ class GamesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Games
         fields = ['id', 'is_owner', 'profile_id', 'name', 'content',
-        'looking_for_friends', 'experience', 'profile_avatar'
+        'looking_for_friends', 'experience', 'profile_avatar',
        ]
