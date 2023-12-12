@@ -36,7 +36,8 @@ class Profile(models.Model):
     profile_avatar = models.ImageField(
         upload_to='images/', default='../defaultUserImage_tuses3'
     )
-
+    game_id = models.IntegerField(null=True)
+    
     class Meta:
         ordering = ['-created_at']
 

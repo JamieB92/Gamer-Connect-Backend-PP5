@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from django_filters.rest_framework import DjangoFilterBackend
 from gamer_connect_api.permissions import IsOwnerOrReadOnly
 from .models import Games
-from .serializers import GamesSerializer, GamesDetailSerializer
+from .serializers import GamesSerializer
 
 
 class GamesList(generics.ListCreateAPIView):
@@ -16,7 +16,10 @@ class GamesList(generics.ListCreateAPIView):
         DjangoFilterBackend
         ]
     filterset_fields = [
-        'profile'
+        'owner__username',
+        'name',
+        'looking_for_friends',
+        'experience'
         ]
 
     def perform_create(self, serializer):
@@ -29,4 +32,4 @@ class GameDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Games.objects.all()
-    serializer_class = GamesDetailSerializer
+    serializer_class = GamesSerializer

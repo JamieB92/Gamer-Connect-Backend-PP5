@@ -30,5 +30,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_at', 'edited_on', 'name',
             'bio', 'profile_avatar', 'platform', 'platform_username',
             'is_owner', 'following_id',
-            'posts_count', 'followers_count', 'following_count',
+            'posts_count', 'followers_count', 'following_count', 'games_id'
         ]

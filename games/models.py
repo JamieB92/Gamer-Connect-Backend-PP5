@@ -33,15 +33,10 @@ class Games(models.Model):
         (god, 'God'),
     ]
 
-
-
     owner = models.ForeignKey(
         User, related_name='owner', on_delete=models.CASCADE
     )
-    profile = models.ForeignKey(
-        Profile, related_name='profile', on_delete=models.CASCADE
-    )
-    game = models.CharField(max_length=255, blank=True)
+    name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     looking_for_friends = models.CharField(
@@ -57,4 +52,4 @@ class Games(models.Model):
     class Meta:
         ordering = ['-created_at']
     def __str__(self):
-        return self.game
+        return self.name
