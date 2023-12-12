@@ -39,8 +39,8 @@ class Games(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    looking_for_friends = models.CharField(
-        'Looking For Friends', blank=True, max_length=20,
+    friends = models.CharField(
+        'Friends', blank=True, max_length=20,
         choices=looking_for_friends_choice
     )
     experience = models.CharField(

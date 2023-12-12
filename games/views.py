@@ -18,7 +18,7 @@ class GamesList(generics.ListCreateAPIView):
     filterset_fields = [
         'owner__username',
         'name',
-        'looking_for_friends',
+        'friends',
         'experience'
         ]
 
