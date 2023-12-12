@@ -6,6 +6,7 @@ class GamesSerializer(serializers.ModelSerializer):
     Serializer for the Games model
     """
     is_owner = serializers.SerializerMethodField()
+    owner = serializers.ReadOnlyField(source='owner.username')
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_avatar = serializers.ReadOnlyField(
         source='owner.profile.profile_avatar.url'
