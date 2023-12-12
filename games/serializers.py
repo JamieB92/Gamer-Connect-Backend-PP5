@@ -25,5 +25,5 @@ class GamesSerializer(serializers.ModelSerializer):
         model = Games
         fields = ['id', 'is_owner', 'profile_id', 'name', 'content',
         'friends', 'experience', 'profile_avatar',
-        'platform', 'platform_username'
+        'platform', 'platform_username', 'owner',
        ]
