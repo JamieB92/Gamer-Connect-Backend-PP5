@@ -5,8 +5,11 @@ from posts.models import Post
 
 class Like(models.Model):
     """
-    Like model associated with 'owner' and 'post', where 'owner' represents a User instance and 'post' represents a Post instance. 
-    The 'unique_together' constraint ensures that a user cannot like the same post more than once.
+    Like model associated with 'owner' and 'post',
+    where 'owner' represents a User instance and
+    'post' represents a Post instance.
+    The 'unique_together' constraint ensures
+    that a user cannot like the same post more than once.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(

@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
 
     """
-    Profile Model that alows the user to select prefered platform they play on with the platforms usename.
+    Profile Model that alows the user to select prefered
+    platform they play on with the platforms usename.
     Default profile avatar set
     """
 
@@ -30,14 +31,16 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     bio = models.TextField(blank=True)
     platform = models.CharField(
-        'Preferred Platform', max_length=20, blank=True, choices=preferred_platform
+        'Preferred Platform', max_length=20, blank=True,
+        choices=preferred_platform
     )
-    platform_username = models.CharField('Platform Username', max_length=255, blank=True)
+    platform_username = models.CharField(
+        'Platform Username', max_length=255, blank=True)
     profile_avatar = models.ImageField(
         upload_to='images/', default='../defaultUserImage_tuses3'
     )
     game_id = models.IntegerField(null=True)
-    
+
     class Meta:
         ordering = ['-created_at']
 
@@ -48,5 +51,6 @@ class Profile(models.Model):
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(owner=instance)
+
 
 post_save.connect(create_profile, sender=User)

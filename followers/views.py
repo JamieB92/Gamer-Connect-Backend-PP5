@@ -6,9 +6,12 @@ from .serializers import FollowerSerializer
 
 class FollowerList(generics.ListCreateAPIView):
     """
-    Display a list of followers, representing instances where one user follows another.
-    Establish a new follower by choosing to follow a user when logged in.
-    Execute the creation process: link the presently logged-in user with a follower.
+    Display a list of followers, representing instances
+    where one user follows another.
+    Establish a new follower by
+    choosing to follow a user when logged in.
+    Execute the creation process: link the
+    presently logged-in user with a follower.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Follower.objects.all()

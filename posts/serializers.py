@@ -6,12 +6,13 @@ from likes.models import Like
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_avatar = serializers.ReadOnlyField(source='owner.profile.profile_avatar.url')
+    profile_id = serializers.ReadOnlyField(
+        source='owner.profile.id')
+    profile_avatar = serializers.ReadOnlyField(
+     source='owner.profile.profile_avatar.url')
     like_id = serializers.SerializerMethodField()
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
-
 
     def get_is_owner(self, obj):
         request = self.context['request']

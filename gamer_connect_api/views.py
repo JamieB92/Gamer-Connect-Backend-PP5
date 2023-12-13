@@ -5,6 +5,7 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+
 @api_view()
 def root_route(request):
     return Response({
@@ -15,7 +16,7 @@ def root_route(request):
 @api_view(['POST'])
 def logout_route(request):
     """
-    dj-rest-auth logout bug fix 
+    dj-rest-auth logout bug fix
     """
     response = Response()
     response.set_cookie(

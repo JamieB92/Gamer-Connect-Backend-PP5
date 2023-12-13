@@ -6,7 +6,6 @@ from .models import Profile
 from .serializers import ProfileSerializer
 
 
-
 class AllProfiles(generics.ListAPIView):
     """
     Display all profiles
@@ -18,7 +17,7 @@ class AllProfiles(generics.ListAPIView):
         following_count=Count('owner__following', distinct=True)
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
-    
+
     filter_backends = [
         filters.OrderingFilter,
         DjangoFilterBackend,

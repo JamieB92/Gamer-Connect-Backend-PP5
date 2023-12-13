@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 class Follower(models.Model):
     """
     Model for followers, involving 'owner' and 'followed' entities.
-    Using unique_togther stops the user from following another user more than once
+    Using unique_togther stops the user
+    from following another user more than once
     """
     owner = models.ForeignKey(
         User, related_name='following', on_delete=models.CASCADE

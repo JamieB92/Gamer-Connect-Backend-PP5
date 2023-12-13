@@ -11,10 +11,10 @@ class PostCommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_avatar = serializers.ReadOnlyField(source='owner.profile.profile_avatar.url')
+    profile_avatar = serializers.ReadOnlyField(
+     source='owner.profile.profile_avatar.url')
     created_at = serializers.SerializerMethodField()
     edited_on = serializers.SerializerMethodField()
-
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -33,9 +33,12 @@ class PostCommentSerializer(serializers.ModelSerializer):
             'post', 'created_at', 'edited_on', 'comment'
         ]
 
+
 class PostCommentDetailSerializer(PostCommentSerializer):
+
     """
     Serializer for the Comment model used in Detail view
-    Post is a read only field so that we dont have to set it on each update
+    Post is a read only field
+    so that we dont have to set it on each update
     """
     post = serializers.ReadOnlyField(source='post.id')
